@@ -54,12 +54,12 @@ public class AssurenceService implements AbstractFacade<Assurance> {
     }
 
     //chercher assurance par son type
-public Assurance findbytype(String type){
+public List<Assurance> findbytype(String type){
 Session session = HibernateUtil.getSessionFactory().openSession();
-Assurance assurance = session
+List<Assurance> assurance = session
         .createQuery("from Assurance where type = :t",Assurance.class)
         .setParameter("t",type)
-        .uniqueResult();
+        .list();
 session.close();
 return assurance;
 }

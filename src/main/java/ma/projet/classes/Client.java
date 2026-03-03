@@ -10,6 +10,11 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    public Client(long id) {
+        this.id = id;
+    }
+
     private String cin;
     private String nom;
     private String prenom;

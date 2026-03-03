@@ -52,7 +52,7 @@ public class ClientService implements AbstractFacade<Client> {
     }
     //chercher client pas cin
 
-    public Client findbytype(String cin){
+    public Client findbycin(String cin){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Client client = session
                 .createQuery("from Client where cin = :c",Client.class)
